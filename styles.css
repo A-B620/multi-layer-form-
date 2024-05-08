@@ -1,0 +1,11 @@
+@tailwind base;
+@tailwind components;
+
+.inputs{
+    @apply rounded-xl  bg-transparent border-2  border-[#4D5562] text-[#A1A1A9] mt-[5px] p-3 mb-5 w-[280px]  focus:border-[#845EEE] outline-0 
+}
+.small_circle{
+   @apply bg-[#4D5562]  h-[10px] w-[10px] rounded-full mt-[3px] 
+}
+
+@tailwind utilities;

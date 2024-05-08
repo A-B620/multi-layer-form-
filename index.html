@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>multi layer form</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+        body {
+            font-family: "Inter", sans-serif;
+        }
+        .step2,.step3 {
+            display: none;
+        }
+        .btn:hover{
+         background-color: #652CD1;
+          }
+       .selected-option {
+          background: #652CD1;
+           color: white;
+           border: 2px solid #652CD1;
+           
+        }
+        .btn{
+            position: fixed;
+            bottom:30%;
+            margin-top:10px;
+            background-color: #845EEE;
+            color:white;
+            width: full;
+            padding:8px 16px ;
+            border-radius: 100px;
+            font-size: 14px;
+            place-self: center;
+        }
+        .titlestep{
+            color: white;
+            margin-bottom:16px;
+            font-size: 16px;
+            width: 100%;
+        }
+       
+    </style>
+</head>
+<body class="bg-[#121826] m-0 p-0 text-[#A1A1A9]">
+
+    <div class="flex justify-center flex-col h-screen w-screen step1">
+        <form action="" class="flex flex-col w-[360px] h-[330px]  self-center items-center bg-[#212936] border-2 border-[#4D5562]  rounded-xl px-[35px] py-[30px]"  method="">
+            <h1 class="text-white titlestep text-[20px]">Register</h1>
+            <label for="name" class=" text-[12px]">Name
+                <input type="text" name="name" id="name" class="inputs" placeholder="enter your name">
+            </label>
+            <label for="email" class="text-[12px]">Email
+                <input type="email" name="email" id="email" class="inputs" placeholder="example@gmail.com">
+            </label>
+            <button type="button" class="btn" onclick="validation(1)">Continue</button>
+        </form>
+        <div class="flex flex-row self-center space-x-2 mt-[20px]">
+           <h1 class="text-[#4D5562] mr-[5px] text-[12px]">Step 1 of 3</h1>
+           <div class="small_circle bg-[#652CD1] shadow-[0px_0px_10px_#845EEE]"></div>
+           <div class="small_circle"></div>
+           <div class="small_circle"></div>
+        </div>
+    </div>
+
+    <div class="flex justify-center flex-col h-screen w-screen step2">
+        <form action="" class="flex flex-col w-[370px] h-[330px] self-center items-center bg-[#212936] border-2 border-[#4D5562]  rounded-xl px-[35px] py-[32px]"  method="">
+            <h1 class=" titlestep ml-[20px] ">Which topics are you interested in?</h1>
+            <select name="" id="useroptions" multiple class="bg-transparent outline-none overflow-hidden h-[180px]">
+                
+                <option value="Software Development" class="inputs bg-[#4D5562] text-[12px] pl-[20px] hover:bg-[#652CD1] hover:border-[#652CD1] hover:text-white " onclick = " optionsbg(this)  " ondblclick=" (removeoption(this)) ">Software Development </option>
+                <option value="User Experience" class="inputs bg-[#4D5562] text-[13px] pl-[20px] hover:bg-[#652CD1] hover:border-[#652CD1] hover:text-white " onclick = " optionsbg(this) " ondblclick=" (removeoption(this))">User Experience</option>
+                <option value="Graphic Design" class="inputs bg-[#4D5562] text-[12px] pl-[20px] hover:bg-[#652CD1] hover:border-[#652CD1] hover:text-white " onclick = " optionsbg(this) " ondblclick=" (removeoption(this))">Graphic Design</option>
+            </select>
+            <button type="button" class="btn"   onclick="validation(2)" >Continue</button>
+        </form>
+        <div class="flex flex-row self-center space-x-2 mt-[20px]">
+           <h1 class="text-[#4D5562] mr-[5px] text-[12px]">Step 2 of 3</h1>
+           <div class="small_circle  bg-[#652CD1] shadow-[0px_0px_10px_#845EEE]"></div>
+           <div class="small_circle bg-[#652CD1] shadow-[0px_0px_10px_#845EEE]"></div>
+           <div class="small_circle"></div>
+        </div>
+    </div>
+
+    <div class="flex justify-center flex-col h-screen w-screen step3">
+        <form action="" class="flex flex-col w-[370px]  h-[330px] self-center items-left bg-[#212936] border-2 border-[#4D5562]  rounded-xl px-[35px] py-[30px] "  method="">
+            <h1 class= " titlestep ">Summary</h1>
+
+             <label for="" class="flex flex-row  mb-[5px] text-[#text-[#4D5562]]">Name:
+                <h1 class="name text-white">
+                </h1>
+             </label>
+
+             <label for="" class="flex flex-row mb-[5px]  text-[#text-[#4D5562]]">Email:
+                <h1 class="email text-white">
+                </h1>
+             </label>
+
+             <ol class="title mt-[10px]  ">
+               <h1 class="">Topics:
+               </h1>
+               
+             </ol>
+            <button type="submit" class="btn ">comfirm</button>
+        </form>
+        <div class="flex flex-row self-center space-x-2 mt-[20px]">
+           <h1 class="text-[#4D5562] mr-[5px] text-[12px]">Step 3 of 3</h1>
+           <div class="small_circle   bg-[#652CD1] shadow-[0px_0px_10px_#845EEE] "></div>
+           <div class="small_circle  bg-[#652CD1] shadow-[0px_0px_10px_#845EEE]"></div>
+           <div class="small_circle  bg-[#652CD1] shadow-[0px_0px_10px_#845EEE]"></div>
+        </div>
+    </div>
+
+
+    <div class="notification  px-[10px] py-[10px] justify-end w-[50%] bg-[#212936] absolute top-0 rounded-r-3xl border-2 border-[#4D5562] hidden">
+        <h1 class='errormsg text-white font-bold text-[20px]'>fill all fields</h1>
+        <img class='ml-[20px]' src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiNmZmZmZmYiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBjbGFzcz0ibHVjaWRlIGx1Y2lkZS1jaXJjbGUtYWxlcnQiPjxjaXJjbGUgY3g9IjEyIiBjeT0iMTIiIHI9IjEwIi8+PGxpbmUgeDE9IjEyIiB4Mj0iMTIiIHkxPSI4IiB5Mj0iMTIiLz48bGluZSB4MT0iMTIiIHgyPSIxMi4wMSIgeTE9IjE2IiB5Mj0iMTYiLz48L3N2Zz4='>                                  
+
+
+    </div>
+
+    <script>
+        let val=[];
+
+
+        function validation(number) {
+            if (number === 1) {
+                let username = document.querySelector('#name');
+                let useremail = document.querySelector('#email');
+                var i=useremail.value.indexOf('@');
+                let e=useremail.value.slice(i);
+                if (useremail.value === "" || !useremail.value.includes('@') || username.value === "") {
+                    if (useremail.value === "") {
+                        noti("emptyfield");
+                    }
+                if (e !== "@gmail.com") {
+                  useremail.style.border = '2px solid red';
+                  noti("emailerror");
+                 }
+                    if (username.value === '') {
+                        username.style.border = '2px solid red';
+                        noti('emptyfield');
+                    }
+                } else {
+                    console.log('email address is', useremail.value);
+                    steps(2);
+                }
+            }
+            else if (number === 2) {
+                let useroptions = document.querySelector('#useroptions');
+                if (useroptions.selectedOptions.length === 0) {
+                    console.log('errror');
+                    noti('selectnone');
+                } else {
+                    console.log(useroptions.selected);
+                    steps(3);
+                    console.log('step 2 cleared');
+                }
+            }       
+        }
+
+
+
+        function noti(error) {
+            let notification = document.querySelector('.notification');
+            let errormsg = document.querySelector(".errormsg");
+            if (error === 'emptyfield') {
+                errormsg.textContent = 'Fill all fields';
+            }
+            if (error === "emailerror") {
+                errormsg.textContent = 'Invalid email';
+            }
+            if (error === 'selectnone'){
+                errormsg.textContent = 'select a option';
+            }
+            if (error === "removed"){
+                errormsg.textContent= 'option removed';
+            }
+            notification.style.display = 'flex';
+            setTimeout(() => {
+                notification.style.display = 'none';
+            }, 4000);
+        }
+
+
+
+
+    function steps(number) {
+    let step1 = document.querySelector('.step1');
+    let step2 = document.querySelector('.step2');
+    let step3 = document.querySelector('.step3');
+    if (number == 2) {
+        step1.style.display = 'none';
+        step2.style.display = 'flex';  
+    } else {
+        let username = document.querySelector('#name');
+        let namestep3 = document.querySelector('.name');
+        let useremail = document.querySelector('#email');
+        let emailstep3 = document.querySelector('.email');
+        let options = document.querySelector('#useroptions');
+        let topics = document.querySelector('.title');
+        step3.style.display = 'flex';
+        step2.style.display = 'none';
+        namestep3.textContent = username.value;
+        emailstep3.textContent = useremail.value;
+        
+        for (let i = 0; i < val.length; i++) {
+          topics.insertAdjacentHTML('afterend',`<li class="ml-[15px] m-[2.5px] text-[14px] text-white">${val[i]}</li>`);
+        }
+        console.log(val);
+        console.log(options.value);
+    }
+}
+
+
+
+function optionsbg(op){
+    if (!op.classList.contains('selected-option')) {
+        op.classList.add('selected-option');
+        val.push(op.value);   
+    }
+}
+
+function removeoption(op){
+    console.log("this is function removeoption");
+    if (op.classList.contains('selected-option')) {
+        op.classList.remove('selected-option');
+        val.splice(val.indexOf(op.value), 1);   
+        noti('removed');
+        console.log('removed option');
+    }
+}
+
+
+        
+    </script>
+
+</body>
+</html>
